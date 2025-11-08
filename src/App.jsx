@@ -8,7 +8,6 @@ function App() {
   const [selectedIcon, setSelectedIcon] = useState(null);
   const [iconSize, setIconSize] = useState(24);
   const [iconColor, setIconColor] = useState("#292D32");
-  const [strokeWidth, setStrokeWidth] = useState(1.5);
   const [activeVariant, setActiveVariant] = useState("linear");
   const [currentPage, setCurrentPage] = useState(1);
   const iconsPerPage = 100;
@@ -80,8 +79,7 @@ function App() {
   function openIconModal(icon) {
     setSelectedIcon(icon);
     setIconSize(24);
-    setIconColor("#111111");
-    setStrokeWidth(1.5);
+    setIconColor("#292D32");
   }
 
   function closeIconModal() {
@@ -105,11 +103,11 @@ function App() {
                 </svg>
               </div>
               <h1 className="logo-text">mxicons</h1>
-              <span className="version-badge">v1.0.2</span>
+              <span className="version-badge">v1.0.4</span>
             </div>
             <a
               className="share-button"
-              href="https://twitter.com/intent/tweet?text=Excited%20to%20share%20MX%20Icons%20%0A-%20Open%20source%0A-%20Awesome%20icons%0A%0ALink%20%3A%20https%3A%2F%2Fmx-icons.vercel.app"
+              href="https://twitter.com/intent/tweet?text=Excited%20to%20share%20MX%20Icons%20%0A-%20Open%20source%0A-%20Awesome%20icons%0A%0ALink%20%3A%20https%3A%2F%2Fmx-icons.vercel.app%0A%0A%40mx_icons"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -236,7 +234,7 @@ function App() {
               title={`Customize ${icon.componentName}`}
             >
               <div className="icon-display">
-                <icon.Component size={24} color="#3B3C3D" strokeWidth={1.5} />
+                <icon.Component size={24} color="#3B3C3D" />
               </div>
               <div className="icon-name">{icon.componentName}</div>
             </button>
@@ -277,11 +275,7 @@ function App() {
               <h2 className="modal-title">{selectedIcon.componentName}</h2>
 
               <div className="modal-preview">
-                <selectedIcon.Component
-                  size={iconSize}
-                  color={iconColor}
-                  strokeWidth={strokeWidth}
-                />
+                <selectedIcon.Component size={iconSize} color={iconColor} />
               </div>
 
               <div className="modal-controls">
@@ -308,38 +302,43 @@ function App() {
                     onChange={(e) => setIconColor(e.target.value)}
                   />
                 </div>
-
-                <div className="control-group">
-                  <label>
-                    Stroke Width: <strong>{strokeWidth}</strong>
-                  </label>
-                  <input
-                    type="range"
-                    min="0.5"
-                    max="4"
-                    step="0.1"
-                    value={strokeWidth}
-                    onChange={(e) => setStrokeWidth(Number(e.target.value))}
-                  />
-                </div>
               </div>
 
               <div className="modal-code">
                 <h3>How to use</h3>
                 <pre>
-                  <code>{`import { ${selectedIcon.componentName} } from 'mx-icons'
-
-<${selectedIcon.componentName} 
-  size={${iconSize}} 
-  color="${iconColor}" 
-  strokeWidth={${strokeWidth}} 
-/>`}</code>
+                  <code>
+                    <span className="keyword">import</span>
+                    <span className="punctuation"> {"{ "}</span>
+                    <span className="component-name">
+                      {selectedIcon.componentName}
+                    </span>
+                    <span className="punctuation">{" } "}</span>
+                    <span className="keyword">from</span>
+                    <span className="prop-value"> 'mx-icons'</span>
+                    {"\n\n"}
+                    <span className="punctuation">{"<"}</span>
+                    <span className="component-name">
+                      {selectedIcon.componentName}
+                    </span>
+                    {"\n  "}
+                    <span className="prop-name">size</span>
+                    <span className="punctuation">={"{"}</span>
+                    <span className="prop-value">{iconSize}</span>
+                    <span className="punctuation">{"}"}</span>
+                    {"\n  "}
+                    <span className="prop-name">color</span>
+                    <span className="punctuation">=</span>
+                    <span className="prop-value">"{iconColor}"</span>
+                    {"\n"}
+                    <span className="punctuation">{"/>"}</span>
+                  </code>
                 </pre>
                 <button
                   className="copy-button"
                   onClick={() =>
                     copyCode(
-                      `import { ${selectedIcon.componentName} } from 'mx-icons'\n\n<${selectedIcon.componentName} size={${iconSize}} color="${iconColor}" strokeWidth={${strokeWidth}} />`
+                      `import { ${selectedIcon.componentName} } from 'mx-icons'\n\n<${selectedIcon.componentName} size={${iconSize}} color="${iconColor}" />`
                     )
                   }
                 >
@@ -409,7 +408,7 @@ function App() {
                     </a>
                   </li>
                   <li>
-                    <a href="https://x.com/@itz_Manish02">Twitter</a>
+                    <a href="https://x.com/mx_icons">Twitter</a>
                   </li>
                   <li>
                     <a href="https://github.com/ig-imanish/mx-icons/issues">
@@ -466,7 +465,7 @@ function App() {
                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
                 </svg>
               </a>
-              <a href="https://x.com/@itz_Manish02" aria-label="Twitter">
+              <a href="https://x.com/mx_icons" aria-label="Twitter">
                 <svg
                   viewBox="0 0 24 24"
                   fill="currentColor"

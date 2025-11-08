@@ -1,48 +1,48 @@
 // Auto-generated icon library
 import Icon from "./Icon";
 
-import { variants as variantsIcon24SSupport } from "./components/24-support";
-import { Icon24SSupportBold } from "./components/24-support";
-import { Icon24SSupportBroken } from "./components/24-support";
-import { Icon24SSupportBulk } from "./components/24-support";
-import { Icon24SSupportLinear } from "./components/24-support";
-import { Icon24SSupportOutline } from "./components/24-support";
-import { Icon24SSupportTwotone } from "./components/24-support";
-import { variants as variantsIcon3dDCubeScan } from "./components/3d-cube-scan";
-import { Icon3dDCubeScanBold } from "./components/3d-cube-scan";
-import { Icon3dDCubeScanBroken } from "./components/3d-cube-scan";
-import { Icon3dDCubeScanBulk } from "./components/3d-cube-scan";
-import { Icon3dDCubeScanLinear } from "./components/3d-cube-scan";
-import { Icon3dDCubeScanOutline } from "./components/3d-cube-scan";
-import { Icon3dDCubeScanTwotone } from "./components/3d-cube-scan";
-import { variants as variantsIcon3dDRotate } from "./components/3d-rotate";
-import { Icon3dDRotateBold } from "./components/3d-rotate";
-import { Icon3dDRotateBroken } from "./components/3d-rotate";
-import { Icon3dDRotateBulk } from "./components/3d-rotate";
-import { Icon3dDRotateLinear } from "./components/3d-rotate";
-import { Icon3dDRotateOutline } from "./components/3d-rotate";
-import { Icon3dDRotateTwotone } from "./components/3d-rotate";
-import { variants as variantsIcon3dDSquare } from "./components/3d-square";
-import { Icon3dDSquareBold } from "./components/3d-square";
-import { Icon3dDSquareBroken } from "./components/3d-square";
-import { Icon3dDSquareBulk } from "./components/3d-square";
-import { Icon3dDSquareLinear } from "./components/3d-square";
-import { Icon3dDSquareOutline } from "./components/3d-square";
-import { Icon3dDSquareTwotone } from "./components/3d-square";
-import { variants as variantsIcon3dDcube } from "./components/3dcube";
-import { Icon3dDcubeBold } from "./components/3dcube";
-import { Icon3dDcubeBroken } from "./components/3dcube";
-import { Icon3dDcubeBulk } from "./components/3dcube";
-import { Icon3dDcubeLinear } from "./components/3dcube";
-import { Icon3dDcubeOutline } from "./components/3dcube";
-import { Icon3dDcubeTwotone } from "./components/3dcube";
-import { variants as variantsIcon3sSquare } from "./components/3square";
-import { Icon3sSquareBold } from "./components/3square";
-import { Icon3sSquareBroken } from "./components/3square";
-import { Icon3sSquareBulk } from "./components/3square";
-import { Icon3sSquareLinear } from "./components/3square";
-import { Icon3sSquareOutline } from "./components/3square";
-import { Icon3sSquareTwotone } from "./components/3square";
+import { variants as variantsIcon24SSupport } from "./components/icon-24-support";
+import { Icon24SSupportBold } from "./components/icon-24-support";
+import { Icon24SSupportBroken } from "./components/icon-24-support";
+import { Icon24SSupportBulk } from "./components/icon-24-support";
+import { Icon24SSupportLinear } from "./components/icon-24-support";
+import { Icon24SSupportOutline } from "./components/icon-24-support";
+import { Icon24SSupportTwotone } from "./components/icon-24-support";
+import { variants as variantsIcon3dDCubeScan } from "./components/icon-3d-cube-scan";
+import { Icon3dDCubeScanBold } from "./components/icon-3d-cube-scan";
+import { Icon3dDCubeScanBroken } from "./components/icon-3d-cube-scan";
+import { Icon3dDCubeScanBulk } from "./components/icon-3d-cube-scan";
+import { Icon3dDCubeScanLinear } from "./components/icon-3d-cube-scan";
+import { Icon3dDCubeScanOutline } from "./components/icon-3d-cube-scan";
+import { Icon3dDCubeScanTwotone } from "./components/icon-3d-cube-scan";
+import { variants as variantsIcon3dDRotate } from "./components/icon-3d-rotate";
+import { Icon3dDRotateBold } from "./components/icon-3d-rotate";
+import { Icon3dDRotateBroken } from "./components/icon-3d-rotate";
+import { Icon3dDRotateBulk } from "./components/icon-3d-rotate";
+import { Icon3dDRotateLinear } from "./components/icon-3d-rotate";
+import { Icon3dDRotateOutline } from "./components/icon-3d-rotate";
+import { Icon3dDRotateTwotone } from "./components/icon-3d-rotate";
+import { variants as variantsIcon3dDSquare } from "./components/icon-3d-square";
+import { Icon3dDSquareBold } from "./components/icon-3d-square";
+import { Icon3dDSquareBroken } from "./components/icon-3d-square";
+import { Icon3dDSquareBulk } from "./components/icon-3d-square";
+import { Icon3dDSquareLinear } from "./components/icon-3d-square";
+import { Icon3dDSquareOutline } from "./components/icon-3d-square";
+import { Icon3dDSquareTwotone } from "./components/icon-3d-square";
+import { variants as variantsIcon3dDcube } from "./components/icon-3dcube";
+import { Icon3dDcubeBold } from "./components/icon-3dcube";
+import { Icon3dDcubeBroken } from "./components/icon-3dcube";
+import { Icon3dDcubeBulk } from "./components/icon-3dcube";
+import { Icon3dDcubeLinear } from "./components/icon-3dcube";
+import { Icon3dDcubeOutline } from "./components/icon-3dcube";
+import { Icon3dDcubeTwotone } from "./components/icon-3dcube";
+import { variants as variantsIcon3sSquare } from "./components/icon-3square";
+import { Icon3sSquareBold } from "./components/icon-3square";
+import { Icon3sSquareBroken } from "./components/icon-3square";
+import { Icon3sSquareBulk } from "./components/icon-3square";
+import { Icon3sSquareLinear } from "./components/icon-3square";
+import { Icon3sSquareOutline } from "./components/icon-3square";
+import { Icon3sSquareTwotone } from "./components/icon-3square";
 import { variants as variantsActivity } from "./components/activity";
 import { ActivityBold } from "./components/activity";
 import { ActivityBroken } from "./components/activity";
@@ -11738,32 +11738,32 @@ export {
 export const icons = [
   {
     name: "24-support",
-    slug: "24-support",
+    slug: "icon-24-support",
     variants: variantsIcon24SSupport,
   },
   {
     name: "3d-cube-scan",
-    slug: "3d-cube-scan",
+    slug: "icon-3d-cube-scan",
     variants: variantsIcon3dDCubeScan,
   },
   {
     name: "3d-rotate",
-    slug: "3d-rotate",
+    slug: "icon-3d-rotate",
     variants: variantsIcon3dDRotate,
   },
   {
     name: "3d-square",
-    slug: "3d-square",
+    slug: "icon-3d-square",
     variants: variantsIcon3dDSquare,
   },
   {
     name: "3dcube",
-    slug: "3dcube",
+    slug: "icon-3dcube",
     variants: variantsIcon3dDcube,
   },
   {
     name: "3square",
-    slug: "3square",
+    slug: "icon-3square",
     variants: variantsIcon3sSquare,
   },
   {

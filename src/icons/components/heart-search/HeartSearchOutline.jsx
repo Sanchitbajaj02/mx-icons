@@ -4,7 +4,6 @@ import Icon from "../../Icon";
 export default function HeartSearchOutline({
   size = 24,
   color = "#292D32",
-  strokeWidth = 1.5,
   className = "",
   ...props
 }) {
@@ -12,7 +11,6 @@ export default function HeartSearchOutline({
     <Icon
       size={size}
       color={color}
-      strokeWidth={strokeWidth}
       fill="none"
       className={className}
       {...props}

@@ -3,7 +3,6 @@ import React from "react";
 export default function Icon({
   size = 24,
   color = "#292D32",
-  strokeWidth = 1.5,
   fill = "none",
   className = "",
   children,
@@ -18,10 +17,6 @@ export default function Icon({
       xmlns="http://www.w3.org/2000/svg"
       className={className}
       style={{ color }}
-      stroke={color}
-      strokeWidth={strokeWidth}
-      strokeLinecap="round"
-      strokeLinejoin="round"
       {...props}
     >
       {children}

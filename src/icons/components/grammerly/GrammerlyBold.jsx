@@ -4,7 +4,6 @@ import Icon from "../../Icon";
 export default function GrammerlyBold({
   size = 24,
   color = "#292D32",
-  strokeWidth = 1.5,
   className = "",
   ...props
 }) {
@@ -12,7 +11,6 @@ export default function GrammerlyBold({
     <Icon
       size={size}
       color={color}
-      strokeWidth={0}
       fill="currentColor"
       className={className}
       {...props}

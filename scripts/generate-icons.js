@@ -18,27 +18,34 @@ const COMPONENTS_DIR = path.join(ICONS_DIR, "components");
 
 function toPascalCase(str) {
   let result = str
-    .replace(/&/g, 'And') // Replace & with And
-    .replace(/[^a-zA-Z0-9-_\s]/g, '') // Remove other special characters
-    .replace(/[-_\s]+(.)?/g, (_, c) => c ? c.toUpperCase() : '')
+    .replace(/&/g, "And") // Replace & with And
+    .replace(/[^a-zA-Z0-9-_\s]/g, "") // Remove other special characters
+    .replace(/[-_\s]+(.)?/g, (_, c) => (c ? c.toUpperCase() : ""))
     .replace(/^(.)/, (_, c) => c.toUpperCase())
-    .replace(/[0-9]+(.)?/g, (match, c) => match + (c ? c.toUpperCase() : ''));
-  
+    .replace(/[0-9]+(.)?/g, (match, c) => match + (c ? c.toUpperCase() : ""));
+
   // If starts with a number, prefix with 'Icon'
   if (/^\d/.test(result)) {
-    result = 'Icon' + result;
+    result = "Icon" + result;
   }
-  
+
   return result;
 }
 
 function toKebabCase(str) {
-  return str
+  let result = str
     .replace(/&/g, "and") // Replace & with and
     .replace(/[^a-zA-Z0-9-_\s]/g, "") // Remove other special characters
     .replace(/([a-z])([A-Z])/g, "$1-$2")
     .replace(/[\s_]+/g, "-")
     .toLowerCase();
+
+  // If starts with a number, prefix with 'icon-'
+  if (/^\d/.test(result)) {
+    result = "icon-" + result;
+  }
+
+  return result;
 }
 
 function extractSVGContent(svgString) {
@@ -55,16 +62,16 @@ function extractSVGContent(svgString) {
   content = content.replace(/stroke="[^"]*"/g, 'stroke="currentColor"');
 
   // Convert kebab-case attributes to camelCase for React
-  content = content.replace(/stroke-width=/g, 'strokeWidth=');
-  content = content.replace(/stroke-linecap=/g, 'strokeLinecap=');
-  content = content.replace(/stroke-linejoin=/g, 'strokeLinejoin=');
-  content = content.replace(/stroke-miterlimit=/g, 'strokeMiterlimit=');
-  content = content.replace(/stroke-dasharray=/g, 'strokeDasharray=');
-  content = content.replace(/stroke-dashoffset=/g, 'strokeDashoffset=');
-  content = content.replace(/fill-rule=/g, 'fillRule=');
-  content = content.replace(/clip-rule=/g, 'clipRule=');
-  content = content.replace(/fill-opacity=/g, 'fillOpacity=');
-  content = content.replace(/stroke-opacity=/g, 'strokeOpacity=');
+  content = content.replace(/stroke-width=/g, "strokeWidth=");
+  content = content.replace(/stroke-linecap=/g, "strokeLinecap=");
+  content = content.replace(/stroke-linejoin=/g, "strokeLinejoin=");
+  content = content.replace(/stroke-miterlimit=/g, "strokeMiterlimit=");
+  content = content.replace(/stroke-dasharray=/g, "strokeDasharray=");
+  content = content.replace(/stroke-dashoffset=/g, "strokeDashoffset=");
+  content = content.replace(/fill-rule=/g, "fillRule=");
+  content = content.replace(/clip-rule=/g, "clipRule=");
+  content = content.replace(/fill-opacity=/g, "fillOpacity=");
+  content = content.replace(/stroke-opacity=/g, "strokeOpacity=");
 
   return content;
 }
@@ -76,7 +83,6 @@ function generateComponent(iconName, variant, svgContent) {
 
   // For bold/bulk variants, use fill. For others, use stroke
   const defaultFill = isBold || isBulk ? "currentColor" : "none";
-  const useStroke = !isBold && !isBulk;
 
   return `import React from "react";
 import Icon from "../../Icon";
@@ -84,7 +90,6 @@ import Icon from "../../Icon";
 export default function ${componentName}({
   size = 24,
   color = "#292D32",
-  strokeWidth = 1.5,
   className = "",
   ...props
 }) {
@@ -92,7 +97,6 @@ export default function ${componentName}({
     <Icon
       size={size}
       color={color}
-      strokeWidth={${useStroke ? "strokeWidth" : "0"}}
       fill="${defaultFill}"
       className={className}
       {...props}
@@ -110,13 +114,15 @@ function createIconComponent(variant, svgFile) {
 
   try {
     const iconName = path.basename(svgFile, ".svg");
-    
+
     // Skip 'icon.svg' to avoid conflict with base Icon component
-    if (iconName.toLowerCase() === 'icon') {
-      console.log(`⚠️  Skipping ${svgFile} (${variant}) - conflicts with base Icon component`);
+    if (iconName.toLowerCase() === "icon") {
+      console.log(
+        `⚠️  Skipping ${svgFile} (${variant}) - conflicts with base Icon component`
+      );
       return null;
     }
-    
+
     const content = extractSVGContent(svgContent);
     const component = generateComponent(iconName, variant, content);
 
